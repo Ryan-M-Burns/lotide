@@ -4,16 +4,20 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     console.log(`🛑 Assertion Failed: ${actual} === ${expected}`);
   }
+  
 };
+
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
+
   for (let index = 0; index < arrayOne.length; index++) {
     if (arrayOne[index] !== arrayTwo[index]) {
       return false;
     }
   }
+
   return true;
 };
 
