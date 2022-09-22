@@ -12,30 +12,27 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return true;
 };
 
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
-  const objectOneKeys = Object.keys(object1).sort();
-  const objectTwoKeys = Object.keys(object2).sort();
+  const objectOneKeys = Object.keys(object1);
+  const objectTwoKeys = Object.keys(object2);
 
   if (objectOneKeys.length !== objectTwoKeys.length) {
     return false;
   }
 
-  for (let i = 0; i < objectOneKeys.length; i++) {
-    const key1 = objectOneKeys[i];
-    const key2 = objectTwoKeys[i];
-    const key1Object = object1[key1];
-    const key2Object = object2[key2];
-    
-    if (key1 !== key2) {
-      return false;
-    }
+  for (let key in object1) {
 
-    if (Array.isArray(key1Object)) {
+    const key1Object = object1[key];
+    const key2Object = object2[key];
+
+    if (Array.isArray(key1Object) && Array.isArray(key2Object)) {
       if (!eqArrays(key1Object, key2Object)) {
         return false;
       }
+      continue;
+    }
+    if (key1Object !== key2Object) {
+      return false;
     }
   }
   return true;
