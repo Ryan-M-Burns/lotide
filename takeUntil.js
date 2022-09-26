@@ -28,18 +28,18 @@ const eqArrays = function(arrayOne, arrayTwo) {
 // 2. The callback
 // takeUntil will return a slice of the array until the callback function returns a truthy value
 const takeUntil = function(array, callback) {
-
   result = [];
 
-  for (let item of array) {
+  for (const item of array) {
     
-    if (callback(item)) return result;
+    if (callback(item)) {
+      return result;
+    }
     
     result.push(item);
   }
   
   return result;
-
 };
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];

@@ -10,7 +10,7 @@ const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length !== arrayTwo.length) {
     return false;
   }
-
+  
   for (let index = 0; index < arrayOne.length; index++) {
     if (arrayOne[index] !== arrayTwo[index]) {
       return false;
@@ -20,51 +20,41 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return true;
 };
 
-const eqObjects = function(object1, object2) {
-  const objectOneKeys = Object.keys(object1);
-  const objectTwoKeys = Object.keys(object2);
 
-  if (objectOneKeys.length !== objectTwoKeys.length) {
+const eqObjects = function(obj1, obj2) {
+
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
     return false;
   }
 
-  for (let key in object1) {
+  for (let key in obj1) {
+    let element1 = obj1[key];
+    let element2 = obj2[key];
 
-    const key1Object = object1[key];
-    const key2Object = object2[key];
+    if (Array.isArray(element1) && Array.isArray(element2)) {
+  
+      if (!eqArrays(element1, element2)) {
+        return false;
+      }
 
-    if (Array.isArray(key1Object) && Array.isArray(key2Object)) {
-      if (!eqArrays(key1Object, key2Object)) {
+      continue;
+    }
+    
+    if (typeof element1 === 'object' && typeof element2 === 'object' && element1 !== null && element2 !== null) {
+      if(!eqObjects(element1, element2)) {
         return false;
       }
       continue;
     }
-    if (key1Object !== key2Object) {
+
+    if (element1 !== element2) {
       return false;
     }
+
   }
   return true;
-};
+}
 
+eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => true
 
-const ab = { a: "1", b: "2" };
-const abn = { a: 1, b: 2 };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abn); // => false
-eqObjects(ab, ba); // => true
-eqObjects(ab, abc); // => false
-assertEqual(eqObjects(ab, abn), false);
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
-
-const cd = { c: "1", d: ["2", 3] };
-const cb = { c: "1", b: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
-assertEqual(eqObjects(cd, cb), false);
-assertEqual(eqObjects(cd, cd2), false);
-assertEqual(eqObjects(cd, dc), true);
+module.exports = eqObjects;

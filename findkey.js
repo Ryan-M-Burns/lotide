@@ -30,8 +30,7 @@ const findKey = (object, callback) => {
     
     }
   }
-
-  return firstKeyTrue;
+  
 };
 
 let object1 = {
