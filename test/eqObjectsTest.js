@@ -1,6 +1,5 @@
 const chai = require('chai');
 const assert = chai.assert;
-const expect = chai.expect;
 const index = require('../index.js');
 
 describe("The function eqObjects()", () => {
