@@ -13,7 +13,7 @@ const obj = darkAngelsCharactersByRank;
 
 describe("The function findKeyByValue()", () => {
 
-  it("should return supreme_grand_master if we search 'Azrael'", () => {
+  it("should return 'supreme_grand_master' if we search 'Azrael'", () => {
     const input = 'Azrael'
     const expected = 'supreme_grand_master'
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
