@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@ryanmburns/lotide",
   "version": "1.0.0",
   "description": "Our own little lodash!",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Ryan-M-Burns/lotide.git"
   },
-  "author": "",
+  "author": "Ryan Burns",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ryan-M-Burns/lotide/issues"

@@ -1,19 +1,19 @@
 const takeUntil = function(array, callback) {
-  result = [];
+  const result = [];
 
-  if(!array[0]) {
+  if (!array[0]) {
     return result;
   }
 
   for (const item of array) {
-    
+
     if (callback(item)) {
       return result;
     }
-    
+
     result.push(item);
   }
-  
+
   return result;
 };
 
