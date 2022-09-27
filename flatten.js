@@ -1,19 +1,16 @@
 const flatten = function(nestedArr) {
   let singleArr = [];
 
-  for (let element of nestedArr) {
-
+  nestedArr.forEach(element => {
+   
     if (Array.isArray(element)) {
-
-      for (let ele of element) {
-        singleArr.push(ele);
-      }
-
+      let ele = flatten(element);
+      singleArr.push(...ele);
     } else {
       singleArr.push(element);
     }
 
-  }
+  });
 
   return singleArr;
 };
