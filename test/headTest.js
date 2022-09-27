@@ -5,15 +5,24 @@ const _ = require('../index');
 describe('function head()', () => {
 
   it('returns 1 for [1, 2, 3]', () => {
-    assert.strictEqual(_.head([1, 2, 3]), 1);
+    input = [1, 2, 3];
+    expected = 1;
+
+    assert.strictEqual(_.head(input), expected);
   });
 
-  it("returns 5 for [5, 6, 7]", () => {
-    assert.strictEqual(_.head([5, 6, 7]), 5);
+  it("returns undefined for an empty array []", () => {
+    input = [];
+    expected = undefined;
+    
+    assert.strictEqual(_.head(input), expected);
   });
 
   it("returns 'Hello' for ['Hello', 'Lighthouse', 'Labs']", () => {
-    assert.strictEqual(_.head(["Hello", "Lighthouse", "Labs"]), "Hello");
+    input = ['Hello', 'Lighthouse', 'Labs'];
+    expected = 'Hello';
+    
+    assert.strictEqual(_.head(input), expected);
   });
 
 });

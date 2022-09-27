@@ -1,11 +1,31 @@
+const chai = require('chai');
+const assert = require('chai').assert;
+const _ = require('../index');
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0); // => [ 1, 2, 5, 7, 2 ]
-console.log(results1);
-assertArraysEqual(results1, [1, 2, 5, 7, 2]);
-console.log('---');
+describe('function takeUntil()', () => {
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ','); // => [ 'I\'ve', 'been', 'to', 'Hollywood' ]
-console.log(results2);
-assertArraysEqual(results2, ['I\'ve', 'been', 'to', 'Hollywood']);
+  it('should take the data and return an array until the callback function is met', () => {
+    const input = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+    const callback = x => x < 0;
+    const expected = [ 1, 2, 5, 7, 2 ];
+
+    assert.deepStrictEqual(_.takeUntil(input, callback),expected);
+  });
+
+  it('should return an empty array if no array entered', () => {
+    const input = [];
+    const callback = x => x < 0;
+    const expected = [];
+
+    assert.deepStrictEqual(_.takeUntil(input, callback),expected);
+  });
+
+  it('should return an error if undefined entered', () => {
+    const input = undefined;
+    const callback = x => x < 0;
+    const expected = Error;
+
+    assert.throws(() => _takeUntil(input, callback), expected);;
+  });
+
+});
