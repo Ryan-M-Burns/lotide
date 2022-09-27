@@ -1,5 +1,5 @@
 const chai = require('chai');
-const assert = require('chai').assert;
+const assert = chai.assert;
 const _ = require('../index');
 
 describe('function takeUntil()', () => {
@@ -7,9 +7,9 @@ describe('function takeUntil()', () => {
   it('should take the data and return an array until the callback function is met', () => {
     const input = [1, 2, 5, 7, 2, -1, 2, 4, 5];
     const callback = x => x < 0;
-    const expected = [ 1, 2, 5, 7, 2 ];
+    const expected = [1, 2, 5, 7, 2];
 
-    assert.deepStrictEqual(_.takeUntil(input, callback),expected);
+    assert.deepStrictEqual(_.takeUntil(input, callback), expected);
   });
 
   it('should return an empty array if no array entered', () => {
@@ -17,7 +17,7 @@ describe('function takeUntil()', () => {
     const callback = x => x < 0;
     const expected = [];
 
-    assert.deepStrictEqual(_.takeUntil(input, callback),expected);
+    assert.deepStrictEqual(_.takeUntil(input, callback), expected);
   });
 
   it('should return an error if undefined entered', () => {
@@ -25,7 +25,7 @@ describe('function takeUntil()', () => {
     const callback = x => x < 0;
     const expected = Error;
 
-    assert.throws(() => _takeUntil(input, callback), expected);;
+    assert.throws(() => _.takeUntil(input, callback), expected);
   });
 
 });

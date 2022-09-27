@@ -15,7 +15,7 @@ describe("The function findKey()", () => {
 
   it("should return 'noma' if we search for first case where there's 2 stars", () => {
     const callback = (x) => x.stars === 2;
-    const expected = 'noma'
+    const expected = 'noma';
     assert.strictEqual(_.findKey(object1, callback), expected);
   });
 
@@ -27,7 +27,7 @@ describe("The function findKey()", () => {
 
   it("should return 'Akaleri' if we search for first case where there isn't 1 star", () => {
     const callback = (x) => x.stars !== 1;
-    const expected = 'Akaleri'
+    const expected = 'Akaleri';
     assert.strictEqual(_.findKey(object1, callback), expected);
   });
 

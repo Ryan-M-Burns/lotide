@@ -3,43 +3,43 @@ const assert = chai.assert;
 const _ = require('../index');
 
 const darkAngelsCharactersByRank = {
-  supreme_grand_master: "Azrael",
-  chief_librarian: "Ezekiel",
-  master_interrogator_chaplain: "Asmodai",
-  grand_master_of_the_ravenwing: "Sammael",
-  grand_master_of_the_deathwing: "Belial"
+  supremeGrandMaster: "Azrael",
+  chielfLibrarian: "Ezekiel",
+  masterInterrogatorChaplain: "Asmodai",
+  grandMasterOfTheRavenwing: "Sammael",
+  grandMasterOfTheDeathwing: "Belial"
 };
 const obj = darkAngelsCharactersByRank;
 
 describe("The function findKeyByValue()", () => {
 
-  it("should return 'supreme_grand_master' if we search 'Azrael'", () => {
-    const input = 'Azrael'
-    const expected = 'supreme_grand_master'
+  it("should return 'supremeGrandMaster' if we search 'Azrael'", () => {
+    const input = 'Azrael';
+    const expected = 'supremeGrandMaster';
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
   });
 
-  it("should return 'chief_librarian' if we search 'Ezekiel'", () => {
-    const input = 'Ezekiel'
-    const expected = 'chief_librarian'
+  it("should return 'chielfLibrarian' if we search 'Ezekiel'", () => {
+    const input = 'Ezekiel';
+    const expected = 'chielfLibrarian';
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
   });
 
-  it("should return 'master_interrogator_chaplain' if we search 'Asmodai'", () => {
-    const input = 'Asmodai'
-    const expected = 'master_interrogator_chaplain'
+  it("should return 'masterInterrogatorChaplain' if we search 'Asmodai'", () => {
+    const input = 'Asmodai';
+    const expected = 'masterInterrogatorChaplain';
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
   });
 
-  it("should return 'grand_master_of_the_ravenwing' if we search 'Sammael'", () => {
-    const input = 'Sammael'
-    const expected = 'grand_master_of_the_ravenwing'
+  it("should return 'grandMasterOfTheRavenwing' if we search 'Sammael'", () => {
+    const input = 'Sammael';
+    const expected = 'grandMasterOfTheRavenwing';
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
   });
 
-  it("should return 'grand_master_of_the_deathwing' if we search 'Belial'", () => {
-    const input = 'Belial'
-    const expected = 'grand_master_of_the_deathwing'
+  it("should return 'grandMasterOfTheDeathwing' if we search 'Belial'", () => {
+    const input = 'Belial';
+    const expected = 'grandMasterOfTheDeathwing';
     assert.strictEqual(_.findKeyByValue(obj, input), expected);
   });
 

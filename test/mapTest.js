@@ -1,5 +1,5 @@
 const chai = require('chai');
-const assert = require('chai').assert;
+const assert = chai.assert;
 const _ = require('../index');
 
 describe('function map()', () => {
