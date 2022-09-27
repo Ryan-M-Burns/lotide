@@ -1,6 +1,6 @@
-const index = require('../index');
+const _ = require('../_');
 
-index.assertEqual(index.tail([]).toString(), [].toString());
-index.assertEqual(index.tail(["Hello", "Lighthouse", "Labs"]).toString(), ["Lighthouse", "Labs"].toString());
-index.assertEqual(index.tail([1, 2, 3]).toString(), [2, 3].toString());
-index.assertEqual(index.tail([1]).toString(), [].toString());
+_.assertEqual(_.tail([]).toString(), [].toString());
+_.assertEqual(_.tail(["Hello", "Lighthouse", "Labs"]).toString(), ["Lighthouse", "Labs"].toString());
+_.assertEqual(_.tail([1, 2, 3]).toString(), [2, 3].toString());
+_.assertEqual(_.tail([1]).toString(), [].toString());
