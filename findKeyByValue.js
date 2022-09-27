@@ -8,7 +8,7 @@ const findKeyByValue = function(objectToSearch, findKeyValue) {
     }
 
   }
-
+  
 };
 
 module.exports = findKeyByValue;

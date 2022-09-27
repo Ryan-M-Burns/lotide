@@ -1,3 +1,4 @@
+const chai = require('chai');
 const assert = require('chai').assert;
 const _ = require('../index');
 
